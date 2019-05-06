@@ -1,0 +1,12 @@
+$ORIGIN deny-list.local.
+$TTL 1H
+@ IN SOA localhost. root.localhost. (
+         1 ; Serial
+         1H ; Refresh
+         15m ; Retry
+         30d ; Expire
+         2h ) ; Negative Cache TTL
+      IN   NS localhost.
+
+; NXDOMAIN all unmatched domains (aka default deny)
+* CNAME .

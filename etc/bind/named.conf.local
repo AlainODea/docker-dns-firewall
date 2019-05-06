@@ -1,0 +1,15 @@
+zone "allow-list.local" {
+  type master;
+  file "/etc/bind/db.allow-list.local";
+  allow-query {
+    none;
+  };
+};
+
+zone "deny-list.local" {
+  type master;
+  file "/etc/bind/db.deny-list.local";
+  allow-query {
+    none;
+  };
+};

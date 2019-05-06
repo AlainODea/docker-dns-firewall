@@ -1,0 +1,16 @@
+$ORIGIN allow-list.local.
+$TTL 1H
+@ IN SOA localhost. root.localhost. (
+         1 ; Serial
+         1H ; Refresh
+         15m ; Retry
+         30d ; Expire
+         2h ) ; Negative Cache TTL
+      IN   NS localhost.
+
+; Example: allow IANA example.com domain (and NO sub-domains)
+example.com CNAME rpz-passthru.
+
+; Example: allow IANA example.org domain (and all sub-domains)
+example.org CNAME rpz-passthru.
+*.example.org CNAME rpz-passthru.
